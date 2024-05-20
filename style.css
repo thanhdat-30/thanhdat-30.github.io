@@ -9,7 +9,6 @@ body {
     font-family: "Montserrat", sans-serif;
     height: 100vh;
     position: relative;
-    /* overflow: hidden; */
 }
 img {
     width: 100%;
@@ -135,30 +134,29 @@ img {
     border-radius: 50px;
     cursor: pointer;
 }
-#no {
+#no{
     position: absolute;
-    transform: translateX(-50px);
-    z-index: 999;
+    transform: translateX(-100px);
+    z-index: 900;
 }
-#yes {
+#yes{
     background-color: rgb(255 167 167);
     font-size: 30px;
     padding: 12px 23px;
     color: #bb3400;
     font-weight: bold;
-    margin-left: 40px;
     animation: shakeBtn 0.5s infinite alternate;
 }
 @keyframes shakeBtn {
     from {
-        transform: rotate(-15deg);
+        transform: rotate(-8deg);
         box-shadow: 0 0 50px rgba(255, 0, 0, 0.575);
     }
     to {
-        transform: rotate(15deg);
+        transform: rotate(8deg);
     }
 }
-.popup {
+.popup{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -170,11 +168,11 @@ img {
     pointer-events: none;
     transition: 1s;
 }
-.popup.active {
+.popup.active{
     opacity: 1;
     pointer-events: visible;
 }
-.popup .inner {
+.popup .inner{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -188,29 +186,34 @@ img {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     transition: 1s;
 }
-.popup.active .inner {
+.popup.active .inner{
     transform: translate(-50%, -50%) scale(1);
 }
-.popup img {
+.popup img{
     width: 50%;
     margin: 0 auto;
     border-radius: 30px;
 }
-.popup h3 {
+.boxchoose img{
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+.popup h3{
     font-size: 28px;
     color: #ed4a5d;
     margin-bottom: 20px;
     text-shadow: 5px 4px 23px #fff;
     font-weight: bold;
 }
-.popup p {
+.popup p{
     font-size: 17px;
     margin-top: 15px;
     color: #fff;
     text-shadow: 1px 1px 1px #808080;
     font-weight: bold;
 }
-.popup p span {
+.popup p span{
     color: yellow;
     font-weight: bold;
 }
