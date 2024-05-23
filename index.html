@@ -12,18 +12,18 @@
 
         </div>
         <div class="boxchoose">
-            <h2>MÌNH QUEN NHAU VỚI TƯ CÁCH LÀ NGƯỜI YÊU NHAA!!</h2>
+            <h2>mình trở thành người yêu nha!</h2>
             <img src="love.gif" alt="">
             <div class="listbutton">
-                <button id="no">Khônggg!!</button>
-                <button id="yes">Em chịuuu</button>
+                <button id="no">khôngg!</button>
+                <button id="yes">em chịu</button>
             </div>
         </div>
         <div class="popup">
             <div class="inner">
-                <h3>vậy là xác định rõ mối quan hệ rồi nhaa kkk </h3>
+                <h3>vậy là xác định rõ mối quan hệ rồi nhaa</h3>
                 <img src="gift.jpg" alt="">
-                <p>sau khoảng thời gian 'nhắn tin' và 'tiếp xúc gần' thì tui cảm thấy <span>THƯƠNG</span> bà gất là nhiềuu cho nên tui sẽ thật <span>NGHIÊM TÚC</span> trong mối quan hệ này nhất có thể <3</p>
+                <p>thời gian qua thì tui cảm thấy <span>THƯƠNG</span> bà rất là nhiềuu nên tui sẽ thật <span>NGHIÊM TÚC</span> trong mối quan hệ này <3</p>
             </div>
         </div>
         <script>
@@ -32,19 +32,19 @@
             let boxheart = document.querySelector(".boxheart");
             let boxchoose = document.querySelector(".boxchoose");
             let popup = document.querySelector(".popup");
-            boxheart.addEventListener("click", function () {
+            boxheart.addEventListener("click", function (){
                 boxheart.classList.add("active");
                 boxchoose.classList.add("active");
             });
-            yesBtn.addEventListener("click", function () {
+            yesBtn.addEventListener("click", function (){
                 popup.classList.add("active");
             });
-            noBtn.addEventListener("mouseenter", () => {
+            noBtn.addEventListener("mouseenter", () =>{
                 const top = Math.floor(Math.random() * window.innerHeight);
                 const left = Math.floor(Math.random() * window.innerWidth);
 
-                noBtn.style.top = `${top}px`;
-                noBtn.style.left = `${left}px`;
+                noBtn.style.top = `${380}px`;
+                noBtn.style.left = `${left-300}px`;
             });
         </script>
     </body>
