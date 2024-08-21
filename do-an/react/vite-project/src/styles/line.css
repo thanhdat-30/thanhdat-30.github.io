@@ -1,0 +1,12 @@
+tr:nth-child(odd) {  
+    background-color: #eef4ee; /* Màu nền cho dòng lẻ */  
+}  
+
+tr:nth-child(even) {  
+    background-color: #e8e9f2; /* Màu nền cho dòng chẵn */  
+}  
+
+tr {
+    border: 10px solid black;
+    border-collapse: collapse;
+}
