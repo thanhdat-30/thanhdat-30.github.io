@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.summary-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.button {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.checkout_container {
+  margin-top: 170px;
+  padding-bottom: 50px;
+  border-bottom: solid 1px #ebebeb;
+}

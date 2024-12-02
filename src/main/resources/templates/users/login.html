@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}" />
+  <link rel="icon" th:href="@{/logo/LogoFS.png}" type="image/x-icon" />
+  <title>Đăng nhập</title>
+</head>
+
+<body class="fade">
+  <div class="container" id="container">
+
+    <div class="form-container sign-in">
+
+      <form th:action="@{/login}" method="post">
+        <h1 style="margin-bottom: 10px;">Đăng Nhập</h1>
+        <span style="margin-bottom: 10px;">Chào mừng bạn quay trở lại!</span>
+        <input type="text" class="form-control" required id="username" name="username" placeholder="Tài khoản">
+        <div class="password-container">
+          <input type="password" class="form-control" id="password" name="password" required placeholder="Mật khẩu">
+          <i class="fas fa-eye eye-icon" id="eyeIcon"></i>
+        </div>
+        <div class="remember-pass-container">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="remember-me" id="remember-me">
+            <label class="form-check-label text-left" for="remember-me">Ghi nhớ</label>
+          </div>
+          <div class="forgot-password-container">
+            <a class="forgot-password" href="/forgot-password">Quên mật khẩu</a>
+          </div>
+        </div>
+        <div class="d-grid gap-2 form-action">
+          <button type="submit" class="btn" onclick="showLoadingProducts()">Đăng
+            nhập</button>
+        </div>
+        <div th:if="${param.error}" class="error">Sai tài khoản hoặc mật khẩu không đúng!</div>
+        <div th:if="${param.logout}" class="logout">Bạn đã đăng xuất thành công</div>
+      </form>
+    </div>
+
+    <div class="toggle-container">
+
+      <div class="toggle">
+
+        <div class="toggle-panel toggle-right">
+          <img src="/logo/LogoFS.png" alt="logo" width="150">
+          <div class="logo_container">
+            <a>FASHION<span>SHOP</span></a>
+          </div>
+          <p>Đăng ký thông tin cá nhân của bạn để thỏa mãn đam mê mua sắm ngay hôm nay!</p>
+          <button class="hidden" id="register" onclick="showLoadingLogin()">Đăng ký</button>
+          <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

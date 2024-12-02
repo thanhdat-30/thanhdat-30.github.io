@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Đơn Hàng Đã Được Đặt Thành Công</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h2 {
+      color: #28a745;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    strong {
+      color: #555;
+    }
+
+    .track-order-btn {
+      display: block;
+      background-color: #28a745;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .track-order-btn:hover {
+      background-color: #218838;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .order-details {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .order-details th,
+    .order-details td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .order-details .namerows {
+      width: 30%;
+    }
+
+    .order-details th {
+      text-align: left;
+      background-color: #f8f8f8;
+    }
+
+    .total-amount {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-container">
+    <h2>Cảm ơn bạn đã đặt hàng <span th:text="${customerName}"></span>!</h2>
+    <p>Đơn hàng của bạn đã được đặt thành công với thông tin:</p>
+    <table class="order-details">
+      <tr>
+        <th class="namerows">Mã Đơn Hàng</th>
+        <td><span th:text="${orderId}"></span></td>
+      </tr>
+      <tr>
+        <th class="namerows">Ngày Đặt Hàng</th>
+        <td><span th:text="${orderDate}"></span></td>
+      </tr>
+      <tr>
+        <th class="namerows">Tổng Giá Trị</th>
+        <td><span th:text="${totalAmount}"></span></td>
+      </tr>
+    </table>
+    <p>Chi tiết đơn hàng:</p>
+    <table class="order-details">
+      <thead>
+        <tr>
+          <th>Tên Sản Phẩm</th>
+          <th>Số Lượng</th>
+          <th>Đơn Giá</th>
+          <th>Tổng Tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="item : ${cartItems}">
+          <td th:text="${item.product.name}"></td>
+          <td th:text="${item.quantity}"></td>
+          <td th:text="${item.product.getFormattedPrice}"></td>
+          <td th:text="${item.formattedPriceQuantity}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Đơn hàng sớm sẽ được giao đến bạn. Chân thành cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!</p>
+    <a href="http://localhost:8080/profile" class="track-order-btn" style="color: #ffffff">Theo dõi đơn hàng</a>
+    <div class="footer">
+      <p>©2024 Mọi quyền được bảo lưu. Được thực hiện và phân phối bởi <span style="color: #fe898c">Nhóm 2</span></p>
+    </div>
+  </div>
+</body>
+
+</html>

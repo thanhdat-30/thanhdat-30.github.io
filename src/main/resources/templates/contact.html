@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<title>Liên hệ với chúng tôi</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" th:href="@{/styles/bootstrap4/bootstrap.min.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/plugins/themify-icons/themify-icons.css}">
+	<link rel="stylesheet" th:href="@{/plugins/jquery-ui-1.12.1.custom/jquery-ui.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/styles/contact_styles.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/styles/contact_responsive.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/styles/main_navigation.css}" type="text/css">
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="alert alert-success" id="notification-popup"
+			style="display: none; position: fixed; left: 50%; top: 13%; transform: translateX(-50%); z-index: 1000;">
+			<span id="popup-message"></span>
+		</div>
+		<div class="super_container">
+			<div class="container contact_container">
+				<div class="row">
+					<div class="col">
+						<div class="breadcrumbs d-flex flex-row align-items-center">
+							<ul>
+								<li><a th:href="@{/home}">Trang chủ</a></li>
+								<li class="active"><a th:href="@{/contact}"><i class="fa fa-angle-right"
+											aria-hidden="true"></i>Liên hệ</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Map Container -->
+
+				<div class="row">
+					<div class="col">
+						<div id="google_map">
+							<div class="map_container">
+								<div id="map"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Contact Us -->
+
+				<div class="row">
+
+					<div class="col-lg-6 contact_col">
+						<div class="contact_contents">
+							<h1>Liên hệ với chúng tôi</h1>
+							<p>Có nhiều cách để liên hệ với chúng tôi. Gọi điện hoặc gửi email cho chúng tôi,
+								<strong>nhấn vào hotline hoặc gmail bên dưới</strong> để chúng tôi
+								hỗ trợ ngay!
+							</p>
+							<div>
+								<p>Hotline: <a href="tel:0399849971" style="color: red;">(+84) 399 849 971</a></p>
+								<p>Gmail: <a href="mailto:thanhdat.dev38@gmail.com"
+										style="color: red;">thanhdat.dev38@gmail.com</a></p>
+							</div>
+							<div>
+								<p>Giờ mở cửa : 8.00-18.00 Thứ 2 - Thứ 7</p>
+								<p>Chủ nhật: Đóng cửa</p>
+							</div>
+						</div>
+
+						<!-- Follow Us -->
+
+						<div class="follow_us_contents">
+							<h1>Theo dõi chúng tôi</h1>
+							<ul class="social d-flex flex-row">
+								<li><a href="https://www.facebook.com/profile.php?id=100029329952699"
+										style="background-color: #3a61c9"><i class="fa fa-facebook"
+											aria-hidden="true"></i></a></li>
+								<li><a href="https://www.tiktok.com/@ng_thdat.30" style="background-color: #41a1f6"><i
+											class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.youtube.com/@ng_thdat.308" style="background-color: #fb4343"><i
+											class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.instagram.com/ngth_dat.30/"
+										style="background-color: #8f6247"><i class="fa fa-instagram"
+											aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-6 get_in_touch_col">
+						<div class="get_in_touch_contents" style="display: flex; justify-content: center;">
+							<img src="/logo/LogoFS-Full.png" alt="logo" width="450">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+		<script th:src="@{/styles/bootstrap4/popper.js}"></script>
+		<script th:src="@{/styles/bootstrap4/bootstrap.min.js}"></script>
+		<script th:src="@{/plugins/Isotope/isotope.pkgd.min.js}"></script>
+		<script th:src="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.js}"></script>
+		<script th:src="@{/plugins/easing/easing.js}"></script>
+		<script
+			th:src="@{https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA}"></script>
+		<script th:src="@{/plugins/jquery-ui-1.12.1.custom/jquery-ui.js}"></script>
+		<script th:src="@{/js/contact_custom.js}"></script>>
+	</div>
+</body>
+
+</html>
