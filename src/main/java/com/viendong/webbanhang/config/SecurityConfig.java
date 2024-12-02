@@ -41,10 +41,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(@NotNull HttpSecurity http) throws Exception {
         return http
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/api/**", "/cart/**", "/home/**"))
+                        .ignoringRequestMatchers("/**"))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/styles/**", "/js/**", "/", "/oauth/**", "/register",
-                                "/error", "/assets/**", "/images/**", "/forgot-password", "/verify-otp", "/logo/**", "/home", "/cart/**")
+                        .requestMatchers("/**")
                         .permitAll()
                         .requestMatchers("/admin/**")
                         .hasAnyAuthority("ADMIN")
