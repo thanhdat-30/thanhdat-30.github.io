@@ -21,7 +21,7 @@ public class HomeController {
     public String showHome(Model model) {
         model.addAttribute("products", productService.getProductNew());
         model.addAttribute("totalQuantity", cartService.getTotalQuantity());
-        return "/home";
+        return "/test";
     }
 
     @PostMapping("/subscribe")
