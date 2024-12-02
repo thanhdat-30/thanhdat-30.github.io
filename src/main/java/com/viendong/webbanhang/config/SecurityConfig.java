@@ -44,7 +44,7 @@ public class SecurityConfig {
                                                 .ignoringRequestMatchers("/api/**", "/cart/**", "/home/**"))
                                 .authorizeHttpRequests(auth -> auth
                                                 .requestMatchers("/styles/**", "/js/**", "/", "/oauth/**", "/register",
-                                                                "/error", "/assets/**", "/images/**", "/forgot-password", "/verify-otp", "/logo/**")
+                                                                "/error", "/assets/**", "/images/**", "/forgot-password", "/verify-otp", "/logo/**", "/home/**", "template/**")
                                                 .permitAll()
                                                 .requestMatchers("/admin/**")
                                                 .hasAnyAuthority("ADMIN")
