@@ -7,15 +7,13 @@ import com.viendong.webbanhang.model.OrderDetail;
 import com.viendong.webbanhang.model.User;
 import com.viendong.webbanhang.repository.OrderDetailRepository;
 import com.viendong.webbanhang.repository.OrderRepository;
-
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jakarta.mail.MessagingException;
 import java.util.HashMap;
-import java.util.Map;
-
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -35,6 +33,7 @@ public class OrderService {
 
     @Autowired
     private CartService cartService;
+
     public List<Order> getRecentOrders() {
         return orderRepository.findTop5ByOrderByOrderDateDesc();
     }
@@ -51,31 +50,31 @@ public class OrderService {
         return orderRepository.findById(id);
     }
 
-//    public Order updateOrder(Long id, Order orderDetails) {
+    //    public Order updateOrder(Long id, Order orderDetails) {
 //        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
 //        order.setCustomerName(orderDetails.getCustomerName());
 //        order.setProductName(orderDetails.getProductName());
 //        order.setQuantity(orderDetails.getQuantity());
 //        return orderRepository.save(order);
 //    }
-public Order updateOrder(Order orderDetails) {
-    // Tìm kiếm và cập nhật trạng thái của đơn hàng
-    Optional<Order> optionalOrder = orderRepository.findById(orderDetails.getId());
-    if (optionalOrder.isPresent()) {
-        Order order = optionalOrder.get();
-        order.setTrangthai(orderDetails.getTrangthai());
-        return orderRepository.save(order);
-    } else {
-        throw new ResourceNotFoundException("Order not found with id " + orderDetails.getId());
+    public Order updateOrder(Order orderDetails) {
+        // Tìm kiếm và cập nhật trạng thái của đơn hàng
+        Optional<Order> optionalOrder = orderRepository.findById(orderDetails.getId());
+        if (optionalOrder.isPresent()) {
+            Order order = optionalOrder.get();
+            order.setTrangthai(orderDetails.getTrangthai());
+            return orderRepository.save(order);
+        } else {
+            throw new ResourceNotFoundException("Order not found with id " + orderDetails.getId());
+        }
     }
-}
 
     public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
     }
 
     public Order createOrder(String customerName, String email, String paymentMethod, String shippingAddress,
-            String note, String phone, List<CartItem> cartItems) {
+                             String note, String phone, List<CartItem> cartItems) {
 
         User accountId = userService.getCurrentUser();
 
@@ -116,12 +115,12 @@ public Order updateOrder(Order orderDetails) {
     }
 
     public Order cartOrder(String customerName, String email, String paymentMethod, String shippingAddress, String note,
-            String phone, List<CartItem> cartItems) {
+                           String phone, List<CartItem> cartItems) {
         return null;
     }
 
     public void sendOrderConfirmationEmail(String email, String customerName, String orderId, String orderDate,
-            String totalAmount) {
+                                           String totalAmount) {
         Map<String, Object> variables = new HashMap<>();
         variables.put("customerName", customerName);
         variables.put("orderId", orderId);

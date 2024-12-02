@@ -1,7 +1,6 @@
 package com.viendong.webbanhang.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.text.DecimalFormat;
 

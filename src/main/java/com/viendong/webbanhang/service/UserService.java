@@ -4,6 +4,7 @@ import com.viendong.webbanhang.Role;
 import com.viendong.webbanhang.model.User;
 import com.viendong.webbanhang.repository.IRoleRepository;
 import com.viendong.webbanhang.repository.IUserRepository;
+import jakarta.mail.MessagingException;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.mail.MessagingException;
 import java.util.HashMap;
-import java.util.Map;
-
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -58,9 +57,11 @@ public class UserService implements UserDetailsService {
             throw new RuntimeException("User not found with id " + user.getId());
         }
     }
+
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
     public void save(@NotNull User user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepository.save(user);
