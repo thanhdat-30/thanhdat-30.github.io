@@ -21,22 +21,6 @@ public class CartService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<CartItem> getCartItems() {
-        return cartItems;
-    }
-
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
-    }
-
-    public ProductRepository getProductRepository() {
-        return productRepository;
-    }
-
-    public void setProductRepository(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
-
     public void addToCart(Long productId, int quantity, String size) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new IllegalArgumentException("Không thấy sản phẩm: " + productId));

@@ -1,0 +1,1191 @@
+2024-12-04 17:13:42 - Starting WebbanhangApplication using Java 23 with PID 10036 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:13:42 - The following 1 profile is active: "prod"
+2024-12-04 17:13:42 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:13:42 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:13:43 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:13:43 - Finished Spring Data repository scanning in 44 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:13:43 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:13:43 - Starting service [Tomcat]
+2024-12-04 17:13:43 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:13:43 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:13:43 - Root WebApplicationContext: initialization completed in 1290 ms
+2024-12-04 17:13:44 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:13:44 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:13:44 - HHH000026: Second-level cache disabled
+2024-12-04 17:13:44 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:13:44 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:13:44 - HikariPool-1 - Starting...
+2024-12-04 17:13:46 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76b3770b
+2024-12-04 17:13:46 - HikariPool-1 - Start completed.
+2024-12-04 17:13:47 - HHH000511: The 5.5.62 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-04 17:13:47 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:13:47 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "create table categories (id bigint not null auto_increment, created_date datetime(6), name varchar(255) not null, primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), name varchar(255) not null, primary key (id)) engine=InnoDB' at line 1]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table categories (id bigint not null auto_increment, created_date datetime(6), name varchar(255) not null, primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), name varchar(255) not null, primary key (id)) engine=InnoDB' at line 1]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:323)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:80)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:240)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), name varchar(255) not null, primary key (id)) engine=InnoDB' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 40 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "create table orders (id bigint not null auto_increment, account_id bigint, customer_name varchar(255), email varchar(255), note varchar(255), order_date datetime(6), payment_method varchar(255), phone varchar(255), product_name varchar(255), quantity integer not null, shipping_address varchar(255), total_amount float(53) not null, trangthai varchar(255), primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), payment_method varchar(255), phone varchar(255), product_name varchar(255),' at line 1]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table orders (id bigint not null auto_increment, account_id bigint, customer_name varchar(255), email varchar(255), note varchar(255), order_date datetime(6), payment_method varchar(255), phone varchar(255), product_name varchar(255), quantity integer not null, shipping_address varchar(255), total_amount float(53) not null, trangthai varchar(255), primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), payment_method varchar(255), phone varchar(255), product_name varchar(255),' at line 1]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:323)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:80)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:240)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), payment_method varchar(255), phone varchar(255), product_name varchar(255),' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 40 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "create table products (id bigint not null auto_increment, created_at datetime(6), description varchar(1000) not null, description_cmt varchar(255), image longblob, name varchar(255) not null, old_price float(53), price float(53) not null, category_id bigint not null, primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), description varchar(1000) not null, description_cmt varchar(255), image lon' at line 1]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table products (id bigint not null auto_increment, created_at datetime(6), description varchar(1000) not null, description_cmt varchar(255), image longblob, name varchar(255) not null, old_price float(53), price float(53) not null, category_id bigint not null, primary key (id)) engine=InnoDB" via JDBC [You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), description varchar(1000) not null, description_cmt varchar(255), image lon' at line 1]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:323)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:80)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:240)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(6), description varchar(1000) not null, description_cmt varchar(255), image lon' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 40 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table order_details add constraint FKjyu2qbqt8gnvno9oe9j2s2ldk foreign key (order_id) references orders (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table order_details add constraint FKjyu2qbqt8gnvno9oe9j2s2ldk foreign key (order_id) references orders (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:455)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:276)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLException: Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 39 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table order_details add constraint FK4q98utpd73imf4yhttm3w0eax foreign key (product_id) references products (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table order_details add constraint FK4q98utpd73imf4yhttm3w0eax foreign key (product_id) references products (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:455)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:276)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLException: Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 39 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table products add constraint FKog2rp4qthbtt2lfyhfo32lsw9 foreign key (category_id) references categories (id)" via JDBC [Table 'sql12749284.products' doesn't exist]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table products add constraint FKog2rp4qthbtt2lfyhfo32lsw9 foreign key (category_id) references categories (id)" via JDBC [Table 'sql12749284.products' doesn't exist]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:455)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:276)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'sql12749284.products' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 39 common frames omitted
+2024-12-04 17:13:48 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table size_quantities add constraint FKq12hw323krrrqgj9xw81p8276 foreign key (product_id) references products (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table size_quantities add constraint FKq12hw323krrrqgj9xw81p8276 foreign key (product_id) references products (id)" via JDBC [Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:583)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:523)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:455)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:276)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:119)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.viendong.webbanhang.WebbanhangApplication.main(WebbanhangApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.sql.SQLException: Can't create table 'sql12749284.#sql-1193_fbcec66' (errno: 150)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 39 common frames omitted
+2024-12-04 17:13:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:13:49 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:13:49 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:13:49 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:13:49 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:13:49 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:13:50 - LiveReload server is running on port 35729
+2024-12-04 17:13:50 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:13:50 - Started WebbanhangApplication in 8.476 seconds (process running for 8.912)
+2024-12-04 17:13:59 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:13:59 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:13:59 - Completed initialization in 0 ms
+2024-12-04 17:14:08 - SQL Error: 1146, SQLState: 42S02
+2024-12-04 17:14:08 - Table 'sql12749284.products' doesn't exist
+2024-12-04 17:14:08 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select p1_0.id,p1_0.category_id,p1_0.created_at,p1_0.description,p1_0.description_cmt,p1_0.image,p1_0.name,p1_0.old_price,p1_0.price from products p1_0 order by p1_0.created_at desc] [Table 'sql12749284.products' doesn't exist] [n/a]; SQL [n/a]] with root cause
+java.sql.SQLSyntaxErrorException: Table 'sql12749284.products' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:265)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:145)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:67)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:204)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:139)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:382)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:302)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:526)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:129)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:169)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy151.findAllByOrderByCreatedAtDesc(Unknown Source)
+	at com.viendong.webbanhang.service.ProductService.getProductNew(ProductService.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.viendong.webbanhang.service.ProductService$$SpringCGLIB$$0.getProductNew(<generated>)
+	at com.viendong.webbanhang.controller.HomeController.showHome(HomeController.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:110)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:151)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-04 17:14:14 - SQL Error: 1146, SQLState: 42S02
+2024-12-04 17:14:14 - Table 'sql12749284.products' doesn't exist
+2024-12-04 17:14:14 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [select p1_0.id,p1_0.category_id,p1_0.created_at,p1_0.description,p1_0.description_cmt,p1_0.image,p1_0.name,p1_0.old_price,p1_0.price from products p1_0 order by p1_0.created_at desc] [Table 'sql12749284.products' doesn't exist] [n/a]; SQL [n/a]] with root cause
+java.sql.SQLSyntaxErrorException: Table 'sql12749284.products' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:265)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:145)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:67)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:204)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:139)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:382)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:302)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:526)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:129)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:169)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy151.findAllByOrderByCreatedAtDesc(Unknown Source)
+	at com.viendong.webbanhang.service.ProductService.getProductNew(ProductService.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.viendong.webbanhang.service.ProductService$$SpringCGLIB$$0.getProductNew(<generated>)
+	at com.viendong.webbanhang.controller.HomeController.showHome(HomeController.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:110)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:151)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-12-04 17:16:53 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:16:53 - HikariPool-1 - Shutdown initiated...
+2024-12-04 17:16:53 - HikariPool-1 - Shutdown completed.
+2024-12-04 17:16:55 - Starting WebbanhangApplication using Java 23 with PID 19876 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:16:55 - The following 1 profile is active: "prod"
+2024-12-04 17:16:55 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:16:55 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:16:56 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:16:56 - Finished Spring Data repository scanning in 48 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:16:57 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:16:57 - Starting service [Tomcat]
+2024-12-04 17:16:57 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:16:57 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:16:57 - Root WebApplicationContext: initialization completed in 1368 ms
+2024-12-04 17:16:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:16:57 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:16:57 - HHH000026: Second-level cache disabled
+2024-12-04 17:16:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:16:57 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:16:57 - HikariPool-1 - Starting...
+2024-12-04 17:17:00 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2334e9e1
+2024-12-04 17:17:00 - HikariPool-1 - Start completed.
+2024-12-04 17:17:01 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:17:01 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:17:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:17:06 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:17:06 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:17:07 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:17:07 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:17:07 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:17:07 - LiveReload server is running on port 35729
+2024-12-04 17:17:07 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:17:07 - Started WebbanhangApplication in 12.694 seconds (process running for 13.139)
+2024-12-04 17:17:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:17:12 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:17:12 - Completed initialization in 1 ms
+2024-12-04 17:20:44 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:20:44 - HikariPool-1 - Shutdown initiated...
+2024-12-04 17:20:44 - HikariPool-1 - Shutdown completed.
+2024-12-04 17:31:12 - Starting WebbanhangApplication using Java 23 with PID 2628 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:31:12 - The following 1 profile is active: "prod"
+2024-12-04 17:31:12 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:31:12 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:31:13 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:31:13 - Finished Spring Data repository scanning in 76 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:31:14 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:31:14 - Starting service [Tomcat]
+2024-12-04 17:31:14 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:31:14 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:31:14 - Root WebApplicationContext: initialization completed in 1623 ms
+2024-12-04 17:31:14 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:31:14 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:31:14 - HHH000026: Second-level cache disabled
+2024-12-04 17:31:14 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:31:14 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:31:14 - HikariPool-1 - Starting...
+2024-12-04 17:31:16 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c8d281c
+2024-12-04 17:31:16 - HikariPool-1 - Start completed.
+2024-12-04 17:31:17 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:31:17 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:31:21 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:31:22 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:31:22 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:31:22 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:31:22 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:31:22 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:31:23 - LiveReload server is running on port 35729
+2024-12-04 17:31:23 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:31:23 - Started WebbanhangApplication in 11.367 seconds (process running for 11.832)
+2024-12-04 17:32:23 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:32:23 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:32:23 - Completed initialization in 1 ms
+2024-12-04 17:36:46 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:36:46 - HikariPool-1 - Shutdown initiated...
+2024-12-04 17:36:46 - HikariPool-1 - Shutdown completed.
+2024-12-04 17:36:48 - Starting WebbanhangApplication using Java 23 with PID 19868 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:36:48 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 17:36:48 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:36:48 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:36:49 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:36:49 - Finished Spring Data repository scanning in 47 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:36:49 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:36:49 - Starting service [Tomcat]
+2024-12-04 17:36:49 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:36:49 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:36:49 - Root WebApplicationContext: initialization completed in 1320 ms
+2024-12-04 17:36:50 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:36:50 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:36:50 - HHH000026: Second-level cache disabled
+2024-12-04 17:36:50 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:36:50 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:36:50 - HikariPool-1 - Starting...
+2024-12-04 17:36:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3623d6aa
+2024-12-04 17:36:52 - HikariPool-1 - Start completed.
+2024-12-04 17:36:52 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:36:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:36:57 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:36:57 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:36:57 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:36:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:36:58 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:36:58 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:36:58 - LiveReload server is running on port 35729
+2024-12-04 17:36:58 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:36:58 - Started WebbanhangApplication in 10.749 seconds (process running for 11.174)
+2024-12-04 17:37:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:37:11 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:37:11 - Completed initialization in 0 ms
+2024-12-04 17:56:59 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:56:59 - HikariPool-1 - Shutdown initiated...
+2024-12-04 17:56:59 - HikariPool-1 - Shutdown completed.
+2024-12-04 17:57:02 - Starting WebbanhangApplication using Java 23 with PID 14460 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:57:02 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 17:57:02 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:57:02 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:57:03 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:57:03 - Finished Spring Data repository scanning in 50 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:57:04 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:57:04 - Starting service [Tomcat]
+2024-12-04 17:57:04 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:57:04 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:57:04 - Root WebApplicationContext: initialization completed in 1339 ms
+2024-12-04 17:57:04 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:57:04 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:57:04 - HHH000026: Second-level cache disabled
+2024-12-04 17:57:04 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:57:04 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:57:04 - HikariPool-1 - Starting...
+2024-12-04 17:57:06 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2da45ae9
+2024-12-04 17:57:06 - HikariPool-1 - Start completed.
+2024-12-04 17:57:07 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:57:07 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:57:11 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:57:12 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:57:12 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:57:12 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:57:12 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:57:12 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:57:13 - LiveReload server is running on port 35729
+2024-12-04 17:57:13 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:57:13 - Started WebbanhangApplication in 11.068 seconds (process running for 11.489)
+2024-12-04 17:57:28 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:57:28 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:57:28 - Completed initialization in 0 ms
+2024-12-04 17:59:12 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:59:12 - HikariPool-1 - Shutdown initiated...
+2024-12-04 17:59:12 - HikariPool-1 - Shutdown completed.
+2024-12-04 17:59:15 - Starting WebbanhangApplication using Java 23 with PID 16784 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 17:59:15 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 17:59:15 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 17:59:15 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 17:59:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 17:59:16 - Finished Spring Data repository scanning in 53 ms. Found 8 JPA repository interfaces.
+2024-12-04 17:59:16 - Tomcat initialized with port 8080 (http)
+2024-12-04 17:59:16 - Starting service [Tomcat]
+2024-12-04 17:59:16 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 17:59:16 - Initializing Spring embedded WebApplicationContext
+2024-12-04 17:59:16 - Root WebApplicationContext: initialization completed in 1388 ms
+2024-12-04 17:59:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 17:59:17 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 17:59:17 - HHH000026: Second-level cache disabled
+2024-12-04 17:59:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 17:59:17 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 17:59:17 - HikariPool-1 - Starting...
+2024-12-04 17:59:19 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75af8f33
+2024-12-04 17:59:19 - HikariPool-1 - Start completed.
+2024-12-04 17:59:19 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 17:59:20 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 17:59:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 17:59:24 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 17:59:24 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 17:59:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 17:59:25 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 17:59:25 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 17:59:25 - LiveReload server is running on port 35729
+2024-12-04 17:59:25 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 17:59:25 - Started WebbanhangApplication in 10.871 seconds (process running for 11.28)
+2024-12-04 17:59:30 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 17:59:30 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 17:59:30 - Completed initialization in 1 ms
+2024-12-04 18:02:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:02:40 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:02:40 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:02:44 - Starting WebbanhangApplication using Java 23 with PID 18436 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:02:44 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:02:44 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:02:44 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:02:45 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:02:45 - Finished Spring Data repository scanning in 74 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:02:46 - Starting WebbanhangApplication using Java 23 with PID 1120 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:02:46 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:02:46 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:02:46 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:02:46 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:02:46 - Starting service [Tomcat]
+2024-12-04 18:02:46 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:02:46 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:02:46 - Root WebApplicationContext: initialization completed in 1960 ms
+2024-12-04 18:02:47 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:02:47 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:02:47 - HHH000026: Second-level cache disabled
+2024-12-04 18:02:47 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:02:47 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:02:47 - HikariPool-1 - Starting...
+2024-12-04 18:02:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:02:47 - Finished Spring Data repository scanning in 58 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:02:48 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:02:48 - Starting service [Tomcat]
+2024-12-04 18:02:48 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:02:48 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:02:48 - Root WebApplicationContext: initialization completed in 1847 ms
+2024-12-04 18:02:48 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:02:48 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:02:48 - HHH000026: Second-level cache disabled
+2024-12-04 18:02:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:02:49 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:02:49 - HikariPool-1 - Starting...
+2024-12-04 18:02:49 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ea9fc1c
+2024-12-04 18:02:49 - HikariPool-1 - Start completed.
+2024-12-04 18:02:50 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:02:51 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:02:51 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d95a1a3
+2024-12-04 18:02:51 - HikariPool-1 - Start completed.
+2024-12-04 18:02:51 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:02:52 - Starting WebbanhangApplication using Java 23 with PID 11412 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:02:52 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:02:52 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:02:52 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:02:52 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:02:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:02:53 - Finished Spring Data repository scanning in 68 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:02:53 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:02:53 - Starting service [Tomcat]
+2024-12-04 18:02:53 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:02:54 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:02:54 - Root WebApplicationContext: initialization completed in 1473 ms
+2024-12-04 18:02:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:02:54 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:02:54 - HHH000026: Second-level cache disabled
+2024-12-04 18:02:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:02:54 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:02:54 - HikariPool-1 - Starting...
+2024-12-04 18:02:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:02:55 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:02:55 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:02:55 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:02:55 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:02:55 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:02:56 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:02:56 - LiveReload server is running on port 35729
+2024-12-04 18:02:56 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 18:02:56 - Started WebbanhangApplication in 12.132 seconds (process running for 13.155)
+2024-12-04 18:02:56 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6dfa2d0
+2024-12-04 18:02:56 - HikariPool-1 - Start completed.
+2024-12-04 18:02:56 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:02:56 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:02:57 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:02:57 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:02:57 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:02:57 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:02:58 - Unable to start LiveReload server
+2024-12-04 18:02:58 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-12-04 18:02:58 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:02:58 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:02:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:02:59 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:02:59 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-04 18:02:59 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-12-04 18:03:01 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:03:02 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:03:02 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:03:02 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:03:02 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:03:02 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:03:03 - Unable to start LiveReload server
+2024-12-04 18:03:03 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-12-04 18:03:03 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:03:03 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:03:04 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:03:04 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-04 18:03:04 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-12-04 18:03:21 - Starting WebbanhangApplication using Java 23 with PID 22144 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:03:21 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:03:21 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:03:21 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:03:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:03:22 - Finished Spring Data repository scanning in 45 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:03:22 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:03:22 - Starting service [Tomcat]
+2024-12-04 18:03:22 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:03:23 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:03:23 - Root WebApplicationContext: initialization completed in 1346 ms
+2024-12-04 18:03:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:03:23 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:03:23 - HHH000026: Second-level cache disabled
+2024-12-04 18:03:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:03:23 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:03:23 - HikariPool-1 - Starting...
+2024-12-04 18:03:25 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63bc652a
+2024-12-04 18:03:25 - HikariPool-1 - Start completed.
+2024-12-04 18:03:26 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:03:26 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:03:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:03:30 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:03:31 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:03:31 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:03:31 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:03:31 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:03:31 - LiveReload server is running on port 35729
+2024-12-04 18:03:32 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 18:03:32 - Started WebbanhangApplication in 10.942 seconds (process running for 11.354)
+2024-12-04 18:03:33 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 18:03:33 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 18:03:33 - Completed initialization in 1 ms
+2024-12-04 18:04:39 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:04:39 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:04:39 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:04:41 - Starting WebbanhangApplication using Java 23 with PID 9992 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:04:41 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:04:41 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:04:41 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:04:42 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:04:42 - Finished Spring Data repository scanning in 50 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:04:42 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:04:42 - Starting service [Tomcat]
+2024-12-04 18:04:42 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:04:42 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:04:42 - Root WebApplicationContext: initialization completed in 1325 ms
+2024-12-04 18:04:43 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:04:43 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:04:43 - HHH000026: Second-level cache disabled
+2024-12-04 18:04:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:04:43 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:04:43 - HikariPool-1 - Starting...
+2024-12-04 18:04:45 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@336c811b
+2024-12-04 18:04:45 - HikariPool-1 - Start completed.
+2024-12-04 18:04:45 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:04:46 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:04:50 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:04:50 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:04:50 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:04:51 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:04:51 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:04:51 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:04:51 - LiveReload server is running on port 35729
+2024-12-04 18:04:51 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 18:04:51 - Started WebbanhangApplication in 10.794 seconds (process running for 11.257)
+2024-12-04 18:04:56 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 18:04:56 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 18:04:56 - Completed initialization in 1 ms
+2024-12-04 18:05:55 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:05:55 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:05:55 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:05:58 - Starting WebbanhangApplication using Java 23 with PID 21776 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:05:58 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:05:59 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:05:59 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:05:59 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:05:59 - Finished Spring Data repository scanning in 50 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:06:00 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:06:00 - Starting service [Tomcat]
+2024-12-04 18:06:00 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:06:00 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:06:00 - Root WebApplicationContext: initialization completed in 1274 ms
+2024-12-04 18:06:00 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:06:00 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:06:00 - HHH000026: Second-level cache disabled
+2024-12-04 18:06:00 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:06:00 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:06:00 - HikariPool-1 - Starting...
+2024-12-04 18:06:02 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d95a1a3
+2024-12-04 18:06:02 - HikariPool-1 - Start completed.
+2024-12-04 18:06:03 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:06:03 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:06:07 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:06:07 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:06:08 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:06:08 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:06:08 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:06:08 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:06:09 - LiveReload server is running on port 35729
+2024-12-04 18:06:09 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 18:06:09 - Started WebbanhangApplication in 10.567 seconds (process running for 10.946)
+2024-12-04 18:06:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 18:06:12 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 18:06:12 - Completed initialization in 1 ms
+2024-12-04 18:09:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:09:41 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:09:41 - HikariPool-1 - Shutdown completed.
+2024-12-04 18:09:45 - Starting WebbanhangApplication using Java 23 with PID 16836 (D:\doan\webbanhang\target\classes started by ASUS in D:\doan\webbanhang)
+2024-12-04 18:09:45 - No active profile set, falling back to 1 default profile: "default"
+2024-12-04 18:09:45 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-04 18:09:45 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-04 18:09:46 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-04 18:09:46 - Finished Spring Data repository scanning in 55 ms. Found 8 JPA repository interfaces.
+2024-12-04 18:09:46 - Tomcat initialized with port 8080 (http)
+2024-12-04 18:09:46 - Starting service [Tomcat]
+2024-12-04 18:09:46 - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-04 18:09:46 - Initializing Spring embedded WebApplicationContext
+2024-12-04 18:09:46 - Root WebApplicationContext: initialization completed in 1382 ms
+2024-12-04 18:09:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-04 18:09:47 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-04 18:09:47 - HHH000026: Second-level cache disabled
+2024-12-04 18:09:47 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-04 18:09:47 - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2024-12-04 18:09:47 - HikariPool-1 - Starting...
+2024-12-04 18:09:49 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18dedbb9
+2024-12-04 18:09:49 - HikariPool-1 - Start completed.
+2024-12-04 18:09:49 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-04 18:09:50 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-04 18:09:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:09:55 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-04 18:09:55 - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-12-04 18:09:55 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-04 18:09:55 - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-04 18:09:55 - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-04 18:09:56 - LiveReload server is running on port 35729
+2024-12-04 18:09:56 - Tomcat started on port 8080 (http) with context path '/'
+2024-12-04 18:09:56 - Started WebbanhangApplication in 11.414 seconds (process running for 11.831)
+2024-12-04 18:10:01 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-04 18:10:01 - Initializing Servlet 'dispatcherServlet'
+2024-12-04 18:10:01 - Completed initialization in 0 ms
+2024-12-04 18:22:25 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-04 18:22:25 - HikariPool-1 - Shutdown initiated...
+2024-12-04 18:22:25 - HikariPool-1 - Shutdown completed.

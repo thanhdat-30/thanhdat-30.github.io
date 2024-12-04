@@ -38,8 +38,8 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute("user") User user,
-                           @NotNull BindingResult bindingResult,
-                           Model model) {
+            @NotNull BindingResult bindingResult,
+            Model model) {
         if (bindingResult.hasErrors()) {
             var errors = bindingResult.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage)
                     .toArray(String[]::new);
@@ -65,7 +65,8 @@ public class UserController {
         if (name == null) {
             redirectAttributes.addFlashAttribute("message", "Người dùng không tồn tại.");
             return "redirect:/forgot-password";
-        } else {
+        }
+        else {
             userService.sendPasswordResetEmail(email, otp, name);
         }
 

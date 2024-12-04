@@ -1,14 +1,38 @@
 package com.viendong.webbanhang.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.text.DecimalFormat;
 
 @Getter
 @Setter
 public class CartItem {
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     private Product product;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     private int quantity;
     private String size;
 

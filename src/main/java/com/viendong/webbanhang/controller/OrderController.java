@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/order")
@@ -37,7 +38,7 @@ public class OrderController {
 
     @PostMapping("/submit")
     public String submitOrder(String customerName, String email, String paymentMethod,
-                              String shippingAddress, String note, String phone) {
+            String shippingAddress, String note, String phone) {
         List<CartItem> cartItems = cartService.getCartItems();
         if (cartItems.isEmpty()) {
             return "redirect:/cart";

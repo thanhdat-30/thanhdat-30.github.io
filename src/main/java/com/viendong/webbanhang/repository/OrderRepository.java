@@ -9,7 +9,6 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query("SELECT COUNT(o) FROM Order o")
     long countOrders();
-
     @Query(value = "SELECT * FROM orders ORDER BY order_date DESC LIMIT 5", nativeQuery = true)
     List<Order> findTop5ByOrderByOrderDateDesc();
 

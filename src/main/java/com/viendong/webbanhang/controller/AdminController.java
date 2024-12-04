@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import java.util.List; // Import List
 
 @Controller
 @RequestMapping("/admin")
@@ -36,18 +36,6 @@ public class AdminController {
 
     @GetMapping
     public String showAdminDashboard(Model model) {
-//        long totalProducts = productService.getTotalProducts();
-//        model.addAttribute("totalProducts", totalProducts);
-//        model.addAttribute("products", productService.getAllProducts());
-//        long categoryCount = categoryService.countCategories();
-//        model.addAttribute("categoryCount", categoryCount);
-//        long totalUsers = userService.getTotalUsers();
-//        model.addAttribute("totalUsers", totalUsers);
-//        model.addAttribute("latestCategories", categoryService.getLatestCategories());
-//        long totalOrders = orderService.getTotalOrders();
-//        model.addAttribute("totalOrders", totalOrders);
-//        List<Product> latestProducts = productService.getLatestProducts();
-//        model.addAttribute("latestProducts", latestProducts);
         List<Order> recentOrders = orderService.getRecentOrders();
         model.addAttribute("orders", recentOrders);
         long totalProducts = productService.getTotalProducts();
@@ -80,18 +68,6 @@ public class AdminController {
         return "/admin/add-categories";
     }
 
-    // @PostMapping("/categories/add")
-    // public String addAdminCategories(@Valid Product product, BindingResult
-    // bindingResult, Model model) {
-    // if (bindingResult.hasErrors()) {
-    // model.addAttribute("categories", categoryService.getAllCategories());
-    // return "/admin/add-categories";
-    // }
-    // productService.addProduct(product);
-    // return "redirect:/admin/categories-management";
-    // }
-
-    // Trang quản lý sản phẩm
     @GetMapping("/products")
     public String showAdminProductsDashboard(Model model) {
         model.addAttribute("products", productService.getAllProducts());
@@ -101,19 +77,6 @@ public class AdminController {
         model.addAttribute("categories", categoryService.getAllCategories());
         return "/admin/products-management";
     }
-
-    // Xử lý thêm sản phẩm mới trong cùng trang quản lý
-    // @PostMapping("/products")
-    // public String addAdminProduct(@Valid Product product, BindingResult
-    // bindingResult, Model model) {
-    // if (bindingResult.hasErrors()) {
-    // model.addAttribute("products", productService.getAllProducts());
-    // model.addAttribute("categories", categoryService.getAllCategories());
-    // return "/admin/products-management";
-    // }
-    // productService.addProduct(product);
-    // return "redirect:/admin/products";
-    // }
 
     @GetMapping("/products/edit/{id}")
     public String showAdminEditForm(@PathVariable("id") Long id, Model model) {
@@ -126,39 +89,36 @@ public class AdminController {
 
     @PostMapping("/products/update/{id}")
     public String updateAdminProduct(@PathVariable("id") Long id, @Valid Product product, BindingResult bindingResult,
-                                     Model model) {
+            Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("categories", categoryService.getAllCategories());
-            return "/admin/edit-product"; // Trở lại trang chỉnh sửa nếu có lỗi
+            return "/admin/edit-product";
         }
-        return "redirect:/admin/products"; // Chuyển hướng đến danh sách sản phẩm
+        return "redirect:/admin/products";
     }
 
     @GetMapping("/products/delete/{id}")
     public String deleteAdminProduct(@PathVariable("id") Long id) {
-        orderDetailsService.deleteByProductId(id); // Xóa tất cả các order_details liên quan đến sản phẩm
-        productService.deleteProductById(id); // Xóa sản phẩm
-        return "redirect:/admin/products"; // Chuyển hướng đến danh sách sản phẩm
+        orderDetailsService.deleteByProductId(id);
+        productService.deleteProductById(id);
+        return "redirect:/admin/products";
     }
 
     @GetMapping("/users")
     public String showUserList(Model model) {
-        model.addAttribute("users", userService.getAllUsers());  // Lấy tất cả người dùng
+        model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("user", new User());
-        return "/admin/user-list";  // Trả về view hiển thị danh sách người dùng
+        return "/admin/user-list";
     }
-
     @PostMapping("/users/update/{id}")
     public String updateUser(@PathVariable("id") Long id, @Valid User user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            user.setId(id); // Đảm bảo rằng ID không bị thay đổi
-//            model.addAttribute("user", user);
+            user.setId(id);
             userService.updateUser(user);
             return "redirect:/admin/users";
         }
         return "/admin/edit-user";
     }
-
     @GetMapping("/users/delete/{id}")
     public String deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
@@ -166,9 +126,9 @@ public class AdminController {
     }
 
 
-    @GetMapping("/orders") // Đường dẫn mới để xem đơn hàng
+    @GetMapping("/orders")
     public String showAllOrders(Model model) {
-        model.addAttribute("orders", orderService.getAllOrders()); // Lấy danh sách đơn hàng
-        return "/admin/oder-management"; // Trả về view hiển thị danh sách đơn hàng
+        model.addAttribute("orders", orderService.getAllOrders());
+        return "/admin/oder-management";
     }
 }

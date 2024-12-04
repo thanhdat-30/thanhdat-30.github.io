@@ -19,12 +19,13 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class ProductService {
-    private final ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
-    private final SizeQuantityRepository sizeQuantityRepository;
+    @Autowired
+    private SizeQuantityRepository sizeQuantityRepository;
 
     @Autowired
     private EmailService emailService;
