@@ -111,49 +111,35 @@
 
 										<!-- Product -->
 
-										<div th:each="product : ${products}" class="product-item men"
-											th:data-category-id="${product.getCategoryId()}">
-											<div class="product discount product_filter">
+										<div class="product-grid"
+											 data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+											<div th:each="product, iterStat : ${products}" class="product-item"
+												 th:if="${iterStat.index < 10}">
 												<div class="product discount product_filter">
 													<div class="product_image">
 														<img th:src="@{/api/products/{id}/image(id=${product.id})}"
-															alt="Không có hình ảnh" />
+															 alt="Không có hình ảnh"/>
 													</div>
 													<div class="favorite favorite_left"></div>
 													<div
-														class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-														<span>-$20</span>
+															class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"
+															th:if="${product.discount != '0%'}">
+														<span th:text="'-' + ${product.discount}"></span>
 													</div>
 													<div class="product_info">
 														<h6 class="product_name">
 															<a th:href="@{products/single/{id}(id=${product.id})}"
-																th:text="${product.name}"></a>
+															   th:text="${product.name}"></a>
 														</h6>
-														<div>
-															<span class="product_price"
-																th:text="${product.getFormattedPrice()}"></span>
-															<span></span>
+														<div class="product_price">
+															<div th:text="${product.formattedPrice}" style="display: inline;"></div>
+															<span th:text="${product.formattedOldPrice}"
+																  th:if="${product.oldPrice > 0}"></span>
 														</div>
 													</div>
 												</div>
 												<div class="red_button add_to_cart_button">
-													<form th:action="@{/cart/add}" method="post"
-														class="add-to-cart-form">
-														<input type="number" name="quantity" min="1" value="1"
-															class="form-control d-inline-block"
-															style="width: 70px; height: 25px;">
-														<input type="hidden" th:value="${product.id}"
-															name="productId" />
-														<button type="submit" class="submit-add-to-cart" style="
-															background-color: transparent;
-															border: none;
-															padding-left: 15px;
-															color: white;
-															cursor: pointer;
-															padding: 20px;">
-															Thêm Vào Giỏ
-														</button>
-													</form>
+													<a th:href="@{products/single/{id}(id=${product.id})}">Mua Ngay</a>
 												</div>
 											</div>
 										</div>

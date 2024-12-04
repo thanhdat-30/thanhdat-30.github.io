@@ -130,6 +130,15 @@ public class Order {
     private String productName;
     private int quantity;
 
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    private String size;
     @CreationTimestamp
     @Column(name = "order_date", updatable = false)
     private LocalDateTime orderDate;

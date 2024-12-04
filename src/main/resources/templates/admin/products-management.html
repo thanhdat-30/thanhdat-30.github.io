@@ -119,7 +119,6 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Quản lý sản phẩm</title>
 </head>
 
@@ -587,9 +586,32 @@
                         $('#addProductModal').modal('hide');
                         $('#addProductForm')[0].reset();
                         loadProducts();
-                    },
-                    error: function (xhr, status, error) {
-                        alert("Có lỗi xảy ra: " + error);
+                        $.notify({
+                            icon: 'fas fa-check-circle',
+                            title: 'Thành công!',
+                            message: 'Sản phẩm đã được thêm thành công!',
+                        }, {
+                            type: 'success',
+                            placement: {
+                                from: "bottom",
+                                align: "right"
+                            },
+                            time: 1000,
+                        });
+                        },
+                        error: function () {
+                        $.notify({
+                            icon: 'fas fa-exclamation-circle',
+                            title: 'Lỗi!',
+                            message: 'Không thể thêm sản phẩm. Vui lòng thử lại.',
+                        }, {
+                            type: 'danger',
+                            placement: {
+                                from: "bottom",
+                                align: "right"
+                            },
+                            time: 1000,
+                        });
                     }
                 });
             }
@@ -701,12 +723,34 @@
                     processData: false,
                     contentType: false,
                     success: function () {
-                        alert('Cập nhật sản phẩm thành công!');
                         $('#editProductModal').modal('hide');
                         loadProducts();
-                    },
-                    error: function () {
-                        alert('Có lỗi khi cập nhật sản phẩm.');
+                        $.notify({
+                            icon: 'fas fa-check-circle',
+                            title: 'Thành công!',
+                            message: 'Sản phẩm đã được sửa thành công!',
+                        }, {
+                            type: 'success',
+                            placement: {
+                                from: "bottom",
+                                align: "right"
+                            },
+                            time: 1000,
+                        });
+                        },
+                        error: function () {
+                        $.notify({
+                            icon: 'fas fa-exclamation-circle',
+                            title: 'Lỗi!',
+                            message: 'Không thể sửa sản phẩm. Vui lòng thử lại.',
+                        }, {
+                            type: 'danger',
+                            placement: {
+                                from: "bottom",
+                                align: "right"
+                            },
+                            time: 1000,
+                        });
                     }
                 });
             }
@@ -718,6 +762,32 @@
                         type: 'DELETE',
                         success: function () {
                             loadProducts();
+                            $.notify({
+                            icon: 'fas fa-check-circle',
+                            title: 'Thành công!',
+                            message: 'Sản phẩm đã được xóa thành công!',
+                            }, {
+                                type: 'success',
+                                placement: {
+                                    from: "bottom",
+                                    align: "right"
+                                },
+                                time: 1000,
+                            });
+                        },
+                        error: function () {
+                        $.notify({
+                            icon: 'fas fa-exclamation-circle',
+                            title: 'Lỗi!',
+                            message: 'Không thể xóa sản phẩm. Vui lòng thử lại.',
+                        }, {
+                            type: 'danger',
+                            placement: {
+                                from: "bottom",
+                                align: "right"
+                            },
+                            time: 1000,
+                        });
                         }
                     });
                 }

@@ -1,5 +1,6 @@
 package com.viendong.webbanhang.service;
 
+import com.viendong.webbanhang.exception.ResourceNotFoundException;
 import com.viendong.webbanhang.model.CartItem;
 import com.viendong.webbanhang.model.Order;
 import com.viendong.webbanhang.model.OrderDetail;
@@ -34,6 +35,9 @@ public class OrderService {
 
     @Autowired
     private CartService cartService;
+    public List<Order> getRecentOrders() {
+        return orderRepository.findTop5ByOrderByOrderDateDesc();
+    }
 
     public long getTotalOrders() {
         return orderRepository.count();
@@ -47,13 +51,24 @@ public class OrderService {
         return orderRepository.findById(id);
     }
 
-    public Order updateOrder(Long id, Order orderDetails) {
-        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
-        order.setCustomerName(orderDetails.getCustomerName());
-        order.setProductName(orderDetails.getProductName());
-        order.setQuantity(orderDetails.getQuantity());
+//    public Order updateOrder(Long id, Order orderDetails) {
+//        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
+//        order.setCustomerName(orderDetails.getCustomerName());
+//        order.setProductName(orderDetails.getProductName());
+//        order.setQuantity(orderDetails.getQuantity());
+//        return orderRepository.save(order);
+//    }
+public Order updateOrder(Order orderDetails) {
+    // Tìm kiếm và cập nhật trạng thái của đơn hàng
+    Optional<Order> optionalOrder = orderRepository.findById(orderDetails.getId());
+    if (optionalOrder.isPresent()) {
+        Order order = optionalOrder.get();
+        order.setTrangthai(orderDetails.getTrangthai());
         return orderRepository.save(order);
+    } else {
+        throw new ResourceNotFoundException("Order not found with id " + orderDetails.getId());
     }
+}
 
     public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
@@ -72,10 +87,15 @@ public class OrderService {
         order.setShippingAddress(shippingAddress);
         order.setNote(note);
         order.setPhone(phone);
+        order.setTrangthai("Chưa xử lý");
 
         List<String> productNames = cartItems.stream()
                 .map(item -> item.getProduct().getName())
-                .collect(Collectors.toList());
+                .toList();
+
+        List<String> productSize = cartItems.stream()
+                .map(item -> item.getSize())
+                .toList();
 
         order.setQuantity(cartItems.stream().mapToInt(CartItem::getQuantity).sum());
 
@@ -129,6 +149,8 @@ public class OrderService {
     }
 
     public List<Order> getAccountIdOrders() {
-        return orderRepository.findAll();
+        Long accountId = userService.getCurrentUser().getId();
+
+        return orderRepository.findByAccountId(accountId);
     }
 }

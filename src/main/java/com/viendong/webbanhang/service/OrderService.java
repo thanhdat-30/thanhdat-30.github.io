@@ -91,11 +91,17 @@ public Order updateOrder(Order orderDetails) {
 
         List<String> productNames = cartItems.stream()
                 .map(item -> item.getProduct().getName())
-                .collect(Collectors.toList());
+                .toList();
+
+        List<String> productSize = cartItems.stream()
+                .map(item -> item.getSize())
+                .toList();
 
         order.setQuantity(cartItems.stream().mapToInt(CartItem::getQuantity).sum());
 
         order.setProductName(String.valueOf(productNames));
+
+        order.setSize(String.valueOf(productSize));
 
         int totalAmount = cartItems.stream()
                 .mapToInt(item -> (int) (item.getProduct().getPrice() * item.getQuantity()))

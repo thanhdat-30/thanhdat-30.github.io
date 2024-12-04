@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{/admin/layoutadmin}">
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
     <title>Quản lý đơn hàng</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
@@ -125,6 +125,7 @@
                 <th>ID</th>
                 <th>Khách hàng</th>
                 <th>Sản phẩm</th>
+                <th>Size</th>
                 <th>Số lượng</th>
                 <th>Ngày đặt</th>
                 <th>Email</th>
@@ -193,12 +194,14 @@ $(document).on('change', '.status-dropdown', function() {
                 let orderList = '';
                 $.each(ordersToShow, function (index, order) {
                     let productNames = order.productName ? order.productName.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
+                    let productSize = order.size ? order.size.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
                     orderList += `
                     <tr>
                             <td>${startIndex + index + 1}</td>
                             <td>${order.id}</td>
                             <td>${order.customerName || 'N/A'}</td>
                             <td>${productNames}</td>
+                            <td>${productSize}</td>
                             <td>${order.quantity || 'N/A'}</td>
                             <td>${new Date(order.orderDate).toLocaleString() || 'N/A'}</td>
                             <td>${order.email || 'N/A'}</td>
