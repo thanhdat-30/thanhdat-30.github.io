@@ -1,6 +1,11 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+p {
+  color: black;
+}
+
 .total {
   font-weight: bold;
   color: red;
@@ -38,11 +43,11 @@ body {
   width: 100%;
 }
 
-/* Nút tăng giảm số lượng */
 .quantity_selector span {
   font-weight: 500;
   color: #232530;
 }
+
 .plus,
 .minus {
   font-size: 12px;
@@ -52,10 +57,12 @@ body {
   padding-right: 14px;
   cursor: pointer;
 }
+
 .plus:hover,
 .minus:hover {
   color: #b5aec4;
 }
+
 #quantity_value {
   font-size: 14px;
   border: none;

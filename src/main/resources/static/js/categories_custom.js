@@ -57,6 +57,7 @@ jQuery(document).ready(function($)
 	initPriceSlider();
 	initCheckboxes();
 	filterByCategory();
+	initPagination();
 
 	/*
 
@@ -351,6 +352,7 @@ jQuery(document).ready(function($)
             });
 
             filterButton.on('click', function() {
+				initPagination();
                 $('.product-grid').isotope({
                     filter: function() {
                         var priceRange = $('#amount').val();
@@ -436,7 +438,7 @@ jQuery(document).ready(function($)
     					box.find('i').addClass('fa-square');
     					box.toggleClass('active');
     				}
-//    				box.toggleClass('active');
+    				//box.toggleClass('active');
     			});
     		});
 
@@ -485,6 +487,7 @@ jQuery(document).ready(function($)
 					$(".product-item").each(function () {
 						$(this).show();
 					});
+					initPagination();
 				} else {
 					$(".product-item").each(function () {
 						const productCategory = $(this).attr('data-category-id');
@@ -497,6 +500,7 @@ jQuery(document).ready(function($)
 					});
 				}
 				$grid.isotope();
+				renderPagination();
 			});
 		});
 
@@ -504,5 +508,79 @@ jQuery(document).ready(function($)
 		if (allCategoryLink) {
 			allCategoryLink.click();
 		}
+	}
+
+	/*
+	
+	10. Phân trang
+
+	*/
+	function initPagination() {
+		const productsPerPage = 12;
+		const productItems = Array.from(document.querySelectorAll(".product-item"));
+		const totalProducts = productItems.length;
+		const totalPages = Math.ceil(totalProducts / productsPerPage);
+		const $grid = $('.product-grid').isotope({
+			itemSelector: '.product-item',
+			layoutMode: 'fitRows'
+		})
+	
+		const renderPagination = () => {
+			const paginationContainer = document.querySelector(".page_selection");
+			paginationContainer.innerHTML = "";
+
+			document.querySelector(".total_pages").textContent = totalPages;
+	
+			for (let i = 1; i <= totalPages; i++) {
+				const pageItem = document.createElement("li");
+				const pageLink = document.createElement("a");
+				pageLink.href = "";
+				pageLink.textContent = i;
+				pageLink.dataset.page = i;
+	
+				pageLink.addEventListener("click", (e) => {
+					e.preventDefault();
+					renderProducts(parseInt(pageLink.dataset.page));
+				});
+	
+				pageItem.appendChild(pageLink);
+				paginationContainer.appendChild(pageItem);
+			}
+		};
+	
+		const renderProducts = (currentPage) => {
+			const start = (currentPage - 1) * productsPerPage;
+			const end = start + productsPerPage;
+	
+			productItems.forEach((product, index) => {
+				product.style.display = index >= start && index < end ? "block" : "none";
+			});
+	
+			const currentPageSpan = document.querySelector(".page_current span");
+			currentPageSpan.textContent = currentPage;
+	
+			document.querySelector(".page_previous").style.visibility = currentPage === 1 ? "hidden" : "visible";
+			document.querySelector(".page_next").style.visibility = currentPage === totalPages ? "hidden" : "visible";
+			$grid.isotope();
+		};
+	
+		document.querySelector(".page_previous").addEventListener("click", (e) => {
+			e.preventDefault();
+			const currentPage = parseInt(document.querySelector(".page_current span").textContent);
+			if (currentPage > 1) {
+				renderProducts(currentPage - 1);
+			}
+		});
+	
+		document.querySelector(".page_next").addEventListener("click", (e) => {
+			e.preventDefault();
+			const currentPage = parseInt(document.querySelector(".page_current span").textContent);
+			if (currentPage < totalPages) {
+				renderProducts(currentPage + 1);
+			}
+		});
+	
+		renderPagination();
+		renderProducts(1);
 	}
 });

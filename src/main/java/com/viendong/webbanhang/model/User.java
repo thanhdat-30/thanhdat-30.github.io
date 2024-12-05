@@ -39,22 +39,6 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getProvider() {
-        return provider;
-    }
-
-    public void setProvider(String provider) {
-        this.provider = provider;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -102,12 +86,6 @@ public class User implements UserDetails {
     @Length(min = 10, max = 10, message = "Phone must be 10 characters")
     @Pattern(regexp = "^[0-9]*$", message = "Phone must be number")
     private String phone;
-
-    @Column(name = "provider", length = 50)
-    private String provider;
-
-    @Column(name = "role_id")
-    private Long roleId;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))

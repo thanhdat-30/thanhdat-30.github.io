@@ -35,6 +35,7 @@ function updateQuantity(button, change) {
                 var priceCell = button.closest('tr').querySelector('.price');
                 var itemTotalCell = button.closest('tr').querySelector('.item-total');
                 var itemPrice = parseFloat(priceCell.getAttribute('data-price'));
+                var newQuantity = parseInt(quantityInput.value);
 
                 itemTotalCell.textContent = formatCurrency(itemPrice * newQuantity);
 
@@ -43,6 +44,6 @@ function updateQuantity(button, change) {
                 }
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Lỗi:', error));
     }
 }

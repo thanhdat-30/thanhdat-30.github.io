@@ -5,6 +5,10 @@ body {
 .summary-section {
   border: 1px solid #ccc;
   padding: 10px;
+  background-image: url(https://i.pinimg.com/originals/bc/85/0f/bc850fcedb45dce673057d546b0b2810.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .button {
@@ -21,4 +25,8 @@ body {
   margin-top: 170px;
   padding-bottom: 50px;
   border-bottom: solid 1px #ebebeb;
+}
+
+p {
+  color: black;
 }

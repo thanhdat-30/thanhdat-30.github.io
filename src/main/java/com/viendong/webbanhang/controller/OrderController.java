@@ -32,7 +32,10 @@ public class OrderController {
 
     @GetMapping("/checkout")
     public String checkout(Model model) {
+        List<CartItem> cartItems = cartService.getCartItems();
+        model.addAttribute("cartItems", cartService.getCartItems());
         model.addAttribute("totalQuantity", cartService.getTotalQuantity());
+        model.addAttribute("cartTotal", cartService.formattedCartTotal());
         return "cart/checkout";
     }
 

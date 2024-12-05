@@ -25,7 +25,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ddd;
         }
 
         .search-bar {
@@ -81,7 +80,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="categoryModalLabel">Manage Category</h5>
+                        <h5 class="modal-title" id="categoryModalLabel"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form id="categoryForm">
@@ -114,6 +113,7 @@
             });
         });
 
+        //Tải danh sách danh mục
         function renderCategories(filteredCategories) {
             const startIndex = (currentPage - 1) * itemsPerPage;
             const paginatedCategories = filteredCategories.slice(startIndex, startIndex + itemsPerPage);
@@ -139,12 +139,13 @@
             updatePaginationControls(filteredCategories.length);
         }
 
+        //Phân trang
         function updatePaginationControls(totalItems) {
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             let paginationHTML = '';
 
             paginationHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
+                <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Trước</a>
             </li>`;
 
             for (let i = 1; i <= totalPages; i++) {
@@ -154,17 +155,19 @@
             }
 
             paginationHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-                <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+                <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Sau</a>
             </li>`;
 
             $('.pagination').html(paginationHTML);
         }
 
+        //Chuyển trang
         function changePage(pageNumber) {
             currentPage = pageNumber;
             filterCategories();
         }
 
+        //Mô tả danh mục
         function openCategoryModal(category = null) {
             if (category) {
                 $('#categoryModalLabel').text("Chỉnh Sửa Danh Mục");
@@ -177,6 +180,7 @@
             $('#categoryModal').modal('show');
         }
 
+        //Tải danh sách danh mục
         function loadCategories() {
             $.ajax({
                 url: '/api/categories',
@@ -204,6 +208,7 @@
             });
         }
 
+        //Tìm kiếm danh mục
         function filterCategories() {
             const searchValue = $('#searchInput').val().toLowerCase();
             const filteredCategories = categories.filter(category =>
@@ -212,6 +217,7 @@
             renderCategories(filteredCategories);
         }
 
+        //Thêm - Sửa danh sách danh mục
         function saveCategory() {
             const categoryData = { id: $('#categoryId').val(), name: $('#name').val() };
             const apiUrl = categoryData.id ? `/api/categories/${categoryData.id}` : '/api/categories';
@@ -258,6 +264,7 @@
             });
         }
 
+        //Chi tiết 1 danh mục
         function editCategory(id) {
             $.ajax({
                 url: `/api/categories/${id}`,
@@ -275,6 +282,7 @@
             });
         }
 
+        //Xóa danh mục
         function deleteCategory(id) {
             if (confirm('Bạn có chắc chắn muốn xóa danh mục này?')) {
                 $.ajax({
@@ -315,6 +323,7 @@
             }
         }
 
+        //Xóa form
         function resetForm() {
             $('#categoryId').val('');
             $('#name').val('');

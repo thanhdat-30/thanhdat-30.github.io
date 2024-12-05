@@ -1,5 +1,6 @@
 package com.viendong.webbanhang.controller;
 
+import com.viendong.webbanhang.model.CartItem;
 import com.viendong.webbanhang.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -18,6 +20,7 @@ public class CartController {
 
     @GetMapping
     public String showCart(Model model) {
+        List<CartItem> cartItems = cartService.getCartItems();
         model.addAttribute("cartItems", cartService.getCartItems());
         model.addAttribute("totalQuantity", cartService.getTotalQuantity());
         model.addAttribute("cartTotal", cartService.formattedCartTotal());

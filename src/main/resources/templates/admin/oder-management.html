@@ -1,204 +1,225 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{/admin/layoutadmin}">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/admin/layoutadmin}">
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <title>Quản lý đơn hàng</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         .status-dropdown {
-            width: auto; /* Giới hạn chiều rộng tự động */
-            min-width: 180px; /* Đảm bảo có đủ không gian cho chữ */
-            background-color: #ffffff; /* Màu nền trắng mặc định */
-            color: #333; /* Màu chữ mặc định */
+            width: auto;
+            min-width: 180px;
+            background-color: #ffffff;
+            color: #333;
         }
 
         .status-dropdown option {
-            color: #333; /* Màu chữ mặc định của các option */
-            background-color: #ffffff; /* Đảm bảo màu nền trắng cho option */
+            color: #333;
+            background-color: #ffffff;
         }
-            body {
-                background-color: #f8f9fa;
-                font-family: 'Arial', sans-serif;
-            }
-            .pagination {
-                justify-content: right;
-                margin: 0;
-            }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .pagination {
+            justify-content: right;
+            margin: 0;
+        }
 
 
-            .box {
-                background: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                margin-top: 20px;
-            }
+        .box {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 10px;
+        }
 
-            h1 {
-                color: #343a40;
-                padding: 20px 0;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-bottom: 2px solid #ddd;
-            }
+        h1 {
+            color: #343a40;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            .search-bar {
-                margin-bottom: 20px;
-            }
+        .search-bar {
+            margin-bottom: 20px;
+        }
 
-            /* Cải tiến bảng */
-            .table-container {
-                overflow-x: auto; /* Thêm cuộn ngang cho bảng */
-                max-width: 100%;
-            }
+        .table-container {
+            overflow-x: auto;
+            max-width: 100%;
+        }
 
-            .table {
-                width: 100%;
-                border-collapse: collapse;
-                table-layout: auto; /* Điều chỉnh chiều rộng tự động cho các cột */
-            }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
 
-            .table th, .table td {
-                padding: 12px;
-                text-align: left;
-                border: 1px solid #ddd;
-                vertical-align: middle;
-            }
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
 
-            .table th {
-                background-color: #f7f7f7;
-                font-weight: bold;
-                color: #333;
-            }
+        .table th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+            color: #333;
+        }
 
-            .table td {
-                background-color: #fff;
-                color: #555;
-            }
+        .table td {
+            background-color: #fff;
+            color: #555;
+        }
 
-            /* Hiệu ứng hover khi di chuột qua dòng */
-            .table tbody tr:hover {
-                background-color: #f1f1f1;
-            }
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
 
-            /* Thêm bóng đổ cho bảng khi hover */
-            .table tr:hover {
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
+        .table tr:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-            /* Cải thiện style cho thông báo lỗi */
-            .alert {
-                margin-top: 20px;
-            }
+        .alert {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body layout:fragment="contentadmin">
 
-<div class="box">
-    <h1 class="mb-4">Quản lý đơn hàng</h1>
+    <div class="box">
+        <h1 class="mb-4">Quản lý đơn hàng</h1>
 
-    <div class="search-bar mb-3">
-        <div class="row">
-            <div class="col-md-4 ms-auto">
-                <div class="input-group">
+        <div class="search-bar mb-3">
+            <div class="row">
+                <div class="col-md-4 ms-auto">
+                    <div class="input-group">
                         <span class="input-group-text">
                             <i class="fas fa-search"></i>
                         </span>
-                    <input type="text" id="searchInput" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="errorAlert" class="alert alert-danger d-none" role="alert"></div>
+
+        <div class="table-container">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>STT</th>
+                        <th>ID</th>
+                        <th>Khách hàng</th>
+                        <th>Sản phẩm</th>
+                        <th>Size</th>
+                        <th>Số lượng</th>
+                        <th>Ngày đặt</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody id="orderList"></tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="pagination"></ul>
+            </nav>
+        </div>
     </div>
 
-    <div id="errorAlert" class="alert alert-danger d-none" role="alert"></div>
+    <script>
+        let currentPage = 1;
+        const itemsPerPage = 10;
+        let totalOrders = [];
 
-    <div class="table-container"> <!-- Bọc bảng trong một container có cuộn ngang -->
-        <table class="table table-bordered table-hover">
-            <thead class="table-light">
-            <tr>
-                <th>STT</th>
-                <th>ID</th>
-                <th>Khách hàng</th>
-                <th>Sản phẩm</th>
-                <th>Size</th>
-                <th>Số lượng</th>
-                <th>Ngày đặt</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
-                <th>Trạng thái</th>
-            </tr>
-            </thead>
-            <tbody id="orderList"></tbody>
-        </table>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination" id="pagination"></ul>
-        </nav>
-    </div>
-</div>
+        //Trạng thái đơn hàng
+        $(document).on('change', '.status-dropdown', function () {
+            const orderId = $(this).data('order-id');
+            const newStatus = $(this).val();
 
-<script>
-    let currentPage = 1;
-    const itemsPerPage = 7;
-    let totalOrders = [];
-$(document).on('change', '.status-dropdown', function() {
-    const orderId = $(this).data('order-id');
-    const newStatus = $(this).val();
-
-    // Gửi yêu cầu PUT để cập nhật trạng thái của đơn hàng
-    $.ajax({
-        url: `/api/orders/${orderId}`,
-        type: 'PUT',
-        contentType: 'application/json',
-        data: JSON.stringify({ trangthai: newStatus }),
-        success: function(response) {
-            console.log('Cập nhật trạng thái thành công:', response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Lỗi khi cập nhật trạng thái:', error);
-        }
-    });
-});
-
-    $(document).ready(function () {
-        loadOrders();
-
-        $('#searchInput').on('keyup', function () {
-            let value = $(this).val().toLowerCase();
-            $('#orderList tr').filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            $.ajax({
+                url: `/api/orders/${orderId}`,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({ trangthai: newStatus }),
+                success: function (response) {
+                    $.notify({
+                        icon: 'fas fa-check-circle',
+                        title: 'Thành công!',
+                        message: 'Trạng thái đơn hàng đã được cập nhật!',
+                        type: 'success'
+                    }, {
+                        placement: {
+                            from: "bottom",
+                            align: "right"
+                        },
+                        time: 1000,
+                    })
+                },
+                error: function (xhr, status, error) {
+                    $.notify({
+                        icon: 'fas fa-exclamation-circle',
+                        title: 'Lỗi!',
+                        message: 'Không thể cập nhật trạng thái đơn hàng. Vui lòng thử lại!',
+                        type: 'danger'
+                    }, {
+                        placement: {
+                            from: "bottom",
+                            align: "right"
+                        },
+                        time: 1000,
+                    })
+                }
             });
         });
-    });
 
-    function loadOrders(page = 1) {
-        $.ajax({
-            url: '/api/orders',
-            type: 'GET',
-            success: function (orders) {
-                totalOrders = orders;
-                const totalPages = Math.ceil(orders.length / itemsPerPage);
-                currentPage = page;
+        //Tìm kiếm
+        $(document).ready(function () {
+            loadOrders();
 
-                // Xử lý phân trang
-                const startIndex = (page - 1) * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-                const ordersToShow = orders.slice(startIndex, endIndex);
+            $('#searchInput').on('keyup', function () {
+                let value = $(this).val().toLowerCase();
+                $('#orderList tr').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
 
-                $('#orderList').empty();
-                let orderList = '';
-                $.each(ordersToShow, function (index, order) {
-                    let productNames = order.productName ? order.productName.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
-                    let productSize = order.size ? order.size.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
-                    orderList += `
+        //Tải đơn hàng
+        function loadOrders(page = 1) {
+            $.ajax({
+                url: '/api/orders',
+                type: 'GET',
+                success: function (orders) {
+                    totalOrders = orders;
+                    const totalPages = Math.ceil(orders.length / itemsPerPage);
+                    currentPage = page;
+
+                    const startIndex = (page - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+                    const ordersToShow = orders.slice(startIndex, endIndex);
+
+                    $('#orderList').empty();
+                    let orderList = '';
+                    $.each(ordersToShow, function (index, order) {
+                        let productNames = order.productName ? order.productName.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
+                        let productSize = order.size ? order.size.replace(/^\[|\]$/g, '').split(',').join(',</br>') : 'N/A';
+                        orderList += `
                     <tr>
                             <td>${startIndex + index + 1}</td>
-                            <td>${order.id}</td>
+                            <td>DH${order.id}</td>
                             <td>${order.customerName || 'N/A'}</td>
                             <td>${productNames}</td>
                             <td>${productSize}</td>
@@ -207,112 +228,107 @@ $(document).on('change', '.status-dropdown', function() {
                             <td>${order.email || 'N/A'}</td>
                             <td>${order.phone || 'N/A'}</td>
                             <td>${order.shippingAddress || 'N/A'}</td>
-<td>
-    <select
-        class="form-control status-dropdown"
-        data-order-id="${order.id}"
-        onchange="updateSelectColor(this)"
-        style="background-color: ${getStatusColor(order.trangthai)}"
-    >
-        <option value="Đang xử lý" ${order.trangthai === 'Đang xử lý' ? 'selected' : ''}>Đang xử lý</option>
-        <option value="Đã giao" ${order.trangthai === 'Đã giao' ? 'selected' : ''}>Đã giao</option>
-        <option value="Đã hủy" ${order.trangthai === 'Đã hủy' ? 'selected' : ''}>Đã hủy</option>
-        <option value="Chưa xử lý" ${order.trangthai === 'Chưa xử lý' ? 'selected' : ''}>Chưa xử lý</option>
-    </select>
-</td>
+                            <td>
+                                <select
+                                    class="form-control status-dropdown"
+                                    data-order-id="${order.id}"
+                                    onchange="updateSelectColor(this)"
+                                    style="background-color: ${getStatusColor(order.trangthai)}"
+                                >
+                                    <option value="Đang xử lý" ${order.trangthai === 'Đang xử lý' ? 'selected' : ''}>Đang xử lý</option>
+                                    <option value="Đã giao" ${order.trangthai === 'Đã giao' ? 'selected' : ''}>Đã giao</option>
+                                    <option value="Đã hủy" ${order.trangthai === 'Đã hủy' ? 'selected' : ''}>Đã hủy</option>
+                                    <option value="Chưa xử lý" ${order.trangthai === 'Chưa xử lý' ? 'selected' : ''}>Chưa xử lý</option>
+                                </select>
+                            </td>
 
 
                         </tr>`;
-                });
-                $('#orderList').html(orderList);
+                    });
+                    $('#orderList').html(orderList);
 
-                // Cập nhật phân trang
-                updatePagination(totalPages);
-            },
-            error: function (xhr, status, error) {
-                $('#errorAlert').removeClass('d-none').text("Không thể tải danh sách đơn hàng. Vui lòng thử lại.");
-                console.error("Lỗi tải danh sách đơn hàng:", error);
-            }
-        });
-    }
-// Hàm trả về màu tương ứng với trạng thái
-function getStatusColor(status) {
-    switch (status) {
-        case "Đang xử lý":
-            return "#20c997"; // Màu xanh nước
-        case "Đã giao":
-            return "#28a745"; // Màu xanh lá
-        case "Đã hủy":
-            return "#ff7f00"; // Màu cam
-        case "Chưa xử lý":
-            return "#dc3545"; // Màu đỏ
-        default:
-            return "#ffffff"; // Màu trắng mặc định
-    }
-}
-
-// Hàm cập nhật màu nền dropdown theo trạng thái đã chọn
-function updateSelectColor(dropdown) {
-    const selectedValue = dropdown.value;
-    dropdown.style.backgroundColor = getStatusColor(selectedValue);
-}
-
-// Khởi tạo màu nền cho dropdown
-function initializeDropdownColors() {
-    const dropdowns = document.querySelectorAll(".status-dropdown");
-    dropdowns.forEach((dropdown) => {
-        const currentValue = dropdown.value;
-
-        // Cập nhật màu nền theo trạng thái
-        if (currentValue && currentValue.trim() !== "") {
-            dropdown.style.backgroundColor = getStatusColor(currentValue);
-        } else {
-            dropdown.style.backgroundColor = "#ffffff"; // Màu trắng mặc định
+                    updatePagination(totalPages);
+                },
+                error: function (xhr, status, error) {
+                    $('#errorAlert').removeClass('d-none').text("Không thể tải danh sách đơn hàng. Vui lòng thử lại.");
+                    console.error("Lỗi tải danh sách đơn hàng:", error);
+                }
+            });
         }
 
-        // Lắng nghe sự kiện thay đổi giá trị
-        dropdown.addEventListener("change", function () {
-            const newValue = this.value;
-            if (newValue && newValue.trim() !== "") {
-                this.style.backgroundColor = getStatusColor(newValue);
-            } else {
-                this.style.backgroundColor = "#ffffff"; // Trả về màu trắng nếu không hợp lệ
+        //Màu nền theo trạng thái
+        function getStatusColor(status) {
+            switch (status) {
+                case "Đang xử lý":
+                    return "yellow";
+                case "Đã giao":
+                    return "#28a745";
+                case "Đã hủy":
+                    return "#ff7f00";
+                case "Chưa xử lý":
+                    return "#dc3545";
+                default:
+                    return "white";
             }
-        });
-    });
-}
+        }
 
-// Khởi động khi DOM đã tải
-document.addEventListener("DOMContentLoaded", initializeDropdownColors);
+        //Cập nhật màu nền dropdown theo trạng thái đã chọn
+        function updateSelectColor(dropdown) {
+            const selectedValue = dropdown.value;
+            dropdown.style.backgroundColor = getStatusColor(selectedValue);
+        }
 
-    function updatePagination(totalPages) {
-        $('#pagination').empty();
+        //Khởi tạo màu nền cho dropdown
+        function initializeDropdownColors() {
+            const dropdowns = document.querySelectorAll(".status-dropdown");
+            dropdowns.forEach((dropdown) => {
+                const currentValue = dropdown.value;
 
-        // Previous button
-        $('#pagination').append(`
-            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                <a class="page-link" href="#" onclick="loadOrders(${currentPage - 1})">Previous</a>
-            </li>
-        `);
+                if (currentValue && currentValue.trim() !== "") {
+                    dropdown.style.backgroundColor = getStatusColor(currentValue);
+                } else {
+                    dropdown.style.backgroundColor = "yellow";
+                }
 
-        // Page number buttons
-        for (let i = 1; i <= totalPages; i++) {
+                dropdown.addEventListener("change", function () {
+                    const newValue = this.value;
+                    if (newValue && newValue.trim() !== "") {
+                        this.style.backgroundColor = getStatusColor(newValue);
+                    } else {
+                        this.style.backgroundColor = "yellow";
+                    }
+                });
+            });
+        }
+
+        //Khởi động khi DOM đã tải
+        document.addEventListener("DOMContentLoaded", initializeDropdownColors);
+
+        //Phân trang
+        function updatePagination(totalPages) {
+            $('#pagination').empty();
+
             $('#pagination').append(`
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="loadOrders(${currentPage - 1})">Trước</a>
+                </li>
+            `);
+
+            for (let i = 1; i <= totalPages; i++) {
+                $('#pagination').append(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
                     <a class="page-link" href="#" onclick="loadOrders(${i})">${i}</a>
                 </li>
             `);
-        }
+            }
 
-        // Next button
-        $('#pagination').append(`
+            $('#pagination').append(`
             <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-                <a class="page-link" href="#" onclick="loadOrders(${currentPage + 1})">Next</a>
+                <a class="page-link" href="#" onclick="loadOrders(${currentPage + 1})">Sau</a>
             </li>
         `);
-    }
-
-</script>
+        }
+    </script>
 
 </body>
 

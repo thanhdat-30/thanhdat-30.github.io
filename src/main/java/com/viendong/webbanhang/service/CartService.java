@@ -78,13 +78,13 @@ public class CartService {
                 if (quantity > 0) {
                     item.setQuantity(quantity);
                 } else {
-                    throw new IllegalArgumentException("Quantity must be greater than 0.");
+                    throw new IllegalArgumentException("Số lượng phải lớn hơn 0");
                 }
                 return;
             }
         }
 
-        throw new IllegalArgumentException("Product not found in cart with size: " + size);
+        throw new IllegalArgumentException("Không tìm tìm thấy sản phẩm có size: " + size);
     }
 
     public double getTotalCartValue() {
