@@ -1,6 +1,5 @@
 package com.viendong.webbanhang.service;
 
-import com.viendong.webbanhang.exception.ResourceNotFoundException;
 import com.viendong.webbanhang.model.CartItem;
 import com.viendong.webbanhang.model.Order;
 import com.viendong.webbanhang.model.OrderDetail;
@@ -17,7 +16,6 @@ import java.util.Map;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -51,22 +49,14 @@ public class OrderService {
         return orderRepository.findById(id);
     }
 
-//    public Order updateOrder(Long id, Order orderDetails) {
-//        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
-//        order.setCustomerName(orderDetails.getCustomerName());
-//        order.setProductName(orderDetails.getProductName());
-//        order.setQuantity(orderDetails.getQuantity());
-//        return orderRepository.save(order);
-//    }
 public Order updateOrder(Order orderDetails) {
-    // Tìm kiếm và cập nhật trạng thái của đơn hàng
     Optional<Order> optionalOrder = orderRepository.findById(orderDetails.getId());
     if (optionalOrder.isPresent()) {
         Order order = optionalOrder.get();
         order.setTrangthai(orderDetails.getTrangthai());
         return orderRepository.save(order);
     } else {
-        throw new ResourceNotFoundException("Order not found with id " + orderDetails.getId());
+        throw new RuntimeException("Order not found with id " + orderDetails.getId());
     }
 }
 

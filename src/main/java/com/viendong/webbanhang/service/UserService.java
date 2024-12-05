@@ -44,23 +44,22 @@ public class UserService implements UserDetailsService {
     }
 
     public User updateUser(User user) {
-        // Kiểm tra xem người dùng có tồn tại trong cơ sở dữ liệu không
         Optional<User> existingUser = userRepository.findById(user.getId());
         if (existingUser.isPresent()) {
-            // Cập nhật thông tin người dùng và lưu lại
             User updatedUser = existingUser.get();
             updatedUser.setUsername(user.getUsername());
             updatedUser.setEmail(user.getEmail());
             updatedUser.setPhone(user.getPhone());
-            // Lưu đối tượng đã cập nhật vào cơ sở dữ liệu
             return userRepository.save(updatedUser);
         } else {
-            throw new RuntimeException("User not found with id " + user.getId());
+            throw new RuntimeException("Không tìm thấy người dùng với id: " + user.getId());
         }
     }
+
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
     public void save(@NotNull User user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepository.save(user);
