@@ -15,16 +15,51 @@
     <script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            min-height: 80vh;
+        }
+
+        #wrap {
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
 
-    <audio autoplay="autoplay">
+    <audio id="bg-music" autoplay>
         <source src="music/nhac.mp3" type="audio/mp3" />
     </audio>
 
-
+    <script>
+        document.addEventListener('click', function playMusicOnce() {
+            var audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play();
+            }
+            document.removeEventListener('click', playMusicOnce);
+        });
+    </script>
 
     <div id="main">
         <div id="error">Trình duyệt của bạn không được hỗ trợ. Để được hỗ trợ liên hệ genzhoccode@gmail.com. Hoặc sử
